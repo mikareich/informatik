@@ -1,21 +1,37 @@
-import random
+liste=[101001, 11,9,4,3,0,6,1, -1, -0.00001, 23*10]
+def sortierenI():
+    laenge=len(liste)-1
+    Speicher=[]
+    Runde=0
+    while Runde != len(liste):
+        index=0
+        while index!=laenge:
+            if liste[index]>liste[index+1]:
+                Speicher = liste[index]
+                liste[index]=liste[index+1]
+                liste[index+1]=Speicher
+                print(liste)
+            elif len(liste)>index+2 and liste[index]>liste[index+2]:
+                Speicher = liste[index]
+                liste[index]=liste[index+2]
+                liste[index+2]=Speicher
+                print(liste)
+            elif len(liste)>index+3 and liste[index]>liste[index+3]:
+                Speicher = liste[index]
+                liste[index]=liste[index+3]
+                liste[index+3]=Speicher
+                print(liste)
+            elif len(liste)>index+4 and liste[index]>liste[index+4]:
+                Speicher = liste[index]
+                liste[index]=liste[index+4]
+                liste[index+4]=Speicher
+                print(liste)
+            elif len(liste)>index+5 and liste[index]>liste[index+5]:
+                Speicher = liste[index]
+                liste[index]=liste[index+5]
+                liste[index+5]=Speicher
+            index+=1
+        Runde+=1
+    print(liste) 
+sortierenI()
 
-def minsort(list):
-    if len(list) <= 1:
-        return list
-
-    mitte = list[0]
-    left = [x for x in list[1:] if x <= mitte]
-    right = [x for x in list[1:] if x > mitte]
-    return minsort(left) + [mitte] + minsort(right)
-
-def generate_list(length):
-    return [random.randint(0, length) for i in range(length)]
-
-print('100 Elemente:' + str(minsort(generate_list(100))))
-print('==============================')
-print('1000 Elemente:' + str(minsort(generate_list(1000))))
-print('==============================')
-print('10000 Elemente:' + str(minsort(generate_list(10000))))
-print('==============================')
-print('100000 Elemente:' + str(minsort(generate_list(100000))))
