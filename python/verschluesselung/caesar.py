@@ -1,5 +1,3 @@
-#%%
-
 def caesar():
     """
     Verschlüsselung mit dem Caesar-Verschlüsselungsverfahren.
