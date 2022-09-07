@@ -17,5 +17,5 @@ def generate_list(length):
     return [random.randint(0, length) for i in range(length)]
 
 timer.startTimer()
-print('100000 Elemente:' + str(minsort(generate_list(10000))))
-print(timer.endTimer())
+print('Elemente: \033[93m 10000 \033[92m\n' + str(minsort(generate_list(100000))))
+print('\033[0m Passed time: \033[93m',timer.endTimer())
